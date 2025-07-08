@@ -113,7 +113,7 @@
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.6);
-      /* Dark tint for better readability */
+      /* Dark tint over the image */
       z-index: 1;
     }
 
@@ -125,8 +125,8 @@
     }
 
     .hero-arabic {
-      font-size: 3.2rem;
-      /* Increased font size */
+      font-size: 3rem;
+      /* Increased Arabic font size */
       font-family: 'Merriweather', serif;
       font-weight: bold;
       margin-bottom: 1rem;
@@ -135,62 +135,19 @@
     }
 
     .hero-verse {
-      font-size: 1.2rem;
-      font-style: italic;
-      margin-bottom: 2rem;
-      opacity: 0.9;
-    }
-
-    .hero-subtext {
-      font-size: 1.2rem;
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-family: 'Merriweather', serif;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero .verse {
-      font-size: 1.3rem;
-      font-style: italic;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero .translation {
       font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    .hero-arabic {
-      font-size: 2.4rem;
-      font-family: 'Merriweather', serif;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-      direction: rtl;
-    }
-
-    .hero-verse {
-      font-size: 1.1rem;
+      /* Smaller size for English translation */
       font-style: italic;
       margin-bottom: 2rem;
       opacity: 0.9;
+      font-family: 'Poppins', sans-serif;
     }
 
     .hero-subtext {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       line-height: 1.6;
       max-width: 600px;
-      margin-bottom: 2rem;
+      margin: 0 auto 2rem;
     }
 
     .intro {
@@ -242,21 +199,56 @@
     }
 
     .social-icons {
-      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      /* spacing below icons */
+      position: relative;
     }
 
     .social-icons a {
-      margin: 0 0.5rem;
       display: inline-block;
-      color: white;
-      font-size: 1.2rem;
-      text-decoration: none;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      position: relative;
+      /* for tooltip to position absolutely */
     }
 
     .social-icons img {
-      width: 28px;
-      vertical-align: middle;
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
       filter: brightness(0) invert(1);
+      /* makes dark PNG icons white */
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      filter: brightness(1.2);
+    }
+
+    .social-icons a::after {
+      content: attr(aria-label);
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      font-size: 0.7rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .social-icons a:hover::after {
+      opacity: 1;
     }
   </style>
 </head>
@@ -316,7 +308,12 @@
       <a href="https://www.instagram.com/thestrongrope" target="_blank"><img src="assets/instagram.png"
           alt="Instagram"></a>
       <a href="https://www.youtube.com/c/TheStrongRope" target="_blank"><img src="assets/youtube.png" alt="YouTube"></a>
-      <a href="https://x.com/_thestrongrope" target="_blank"><img src="assets/x-twitter.png" alt="X / Twitter"></a>
+      <a href="https://www.t.me/thestrongrope" target="_blank"><img src="assets/telegram.png" alt="Telegram"></a>
+      <a href="https://x.com/_thestrongrope" target="_blank"><img src="assets/x.png" alt="Twitter"></a>
+      <a href="https://www.facebook.com/TheStrongRope/" target="_blank"><img src="assets/facebook.png"
+          alt="Facebook"></a>
+      <a href="https://wa.me/+918070151412" target="_blank"><img src="assets/whatsapp.png" alt="WhatsAapp"></a>
+
     </div>
     <p>&copy; 2025 The Strong Rope | Wilāyat-e-Ahle Bait (a.s.)</p>
   </footer>
