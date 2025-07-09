@@ -63,6 +63,11 @@
       line-height: 80px;
     }
 
+    nav a.login-link {
+      background-color: var(--accent);
+      color: white;
+    }
+
     nav a:hover {
       background-color: var(--monza);
       /* Red Strong Rope color */
@@ -101,7 +106,7 @@
       color: white;
       text-align: center;
       padding: 6rem 2rem;
-      background: url('assets/bg-hero.jpg') center/cover no-repeat;
+      background: url('assets/bg-hero.jpg') top/cover no-repeat;
       min-height: 90vh;
       display: flex;
       align-items: center;
@@ -149,6 +154,30 @@
       max-width: 600px;
       margin: 0 auto 2rem;
     }
+
+    /* animation to slide up and fade in the hero content */
+    .hero-content>* {
+      opacity: 0;
+      animation: slideUpFade 0.8s ease-out forwards;
+    }
+
+    /* Staggered delays */
+    .hero-content h1 {
+      animation-delay: 0.2s;
+    }
+
+    .hero-content .hero-verse {
+      animation-delay: 0.4s;
+    }
+
+    .hero-content .hero-subtext {
+      animation-delay: 0.6s;
+    }
+
+    .hero-content .cta-buttons {
+      animation-delay: 0.8s;
+    }
+
 
     .intro {
       padding: 3rem 2rem;
@@ -250,6 +279,18 @@
     .social-icons a:hover::after {
       opacity: 1;
     }
+
+    @keyframes slideUpFade {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -260,14 +301,14 @@
       <a href="#learn">Learn</a>
       <a href="#watch">Watch</a>
       <a href="#read">Read</a>
-      <a href="#community">Community</a>
-      <a href="#contact">Contact</a>
+      <a href="#community">Contact</a>
+      <a href="https://account.thestrongrope.com/" class="login-link">Login</a>
     </nav>
   </header>
 
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-arabic">“وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا”</h1>
+      <h1 class="hero-arabic">وَاعْتَصِمُوا بِحَبْلِ اللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا</h1>
       <p class="hero-verse">
         (And hold fast, all of you together, to the rope of Allah and do not be divided – 3:103)
       </p>
